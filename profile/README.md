@@ -158,8 +158,11 @@ Clubing을 통해 학생과 운영자 모두가 번거로운 연락 없이 실�
 
 - **이한식** – Backend 리드  
   - Spring Boot API 개발 및 AWS EC2 인프라 구성  
-  - MySQL, Redis 연동 및 JWT/CORS 설정   
-
+  - MySQL, Redis 연동 및 JWT/CORS 설정
+  
+- **심현석** - Design 리드
+  - Pigma 활용한 디자인
+  - 그외 기획
 ---
 
 ## 라이선스
