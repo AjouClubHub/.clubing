@@ -101,9 +101,9 @@ Clubing을 통해 학생과 운영자 모두가 번거로운 연락 없이 실�
 - **환경 변수 관리**: dotenv  
 
 ### Backend
-- **Framework**: Spring Boot (AWS EC2 배포)  
-- **데이터베이스**: MySQL (Amazon RDS)  
-- **캐시/세션**: Redis (ElastiCache)  
+- **Framework**: Spring Boot
+- **데이터베이스**: MySQL
+- **캐시/분산락**: Redis  
 - **인증·보안**:  
   - JWT 기반 인증  
   - CORS 설정  
@@ -113,8 +113,8 @@ Clubing을 통해 학생과 운영자 모두가 번거로운 연락 없이 실�
   - Coolsms (SMS)  
   - 비동기 전송으로 응답 지연 최소화  
 - **테스트 & 품질**:  
-  - JUnit 기반 통합 테스트 (약 70% 커버리지)  
-  - Redis 분산락 → Race Condition 방지  
+  - JUnit 기반 통합 테스트
+- **CI/CD**: GitHub Actions
 - **모니터링**: Prometheus (메트릭 수집) → Grafana (대시보드 시각화)  
 
 ---
@@ -142,10 +142,10 @@ Clubing을 통해 학생과 운영자 모두가 번거로운 연락 없이 실�
   - OS: Ubuntu 20.04  
   - Web Server: Nginx (Reverse Proxy)  
   - Application: Spring Boot JAR (포트 8080)  
-  - 데이터베이스: MySQL (Amazon RDS)  
-  - 캐시/세션: Redis (ElastiCache)  
+  - 데이터베이스: MySQL
+  - 캐시/분산락: Redis
   - TLS 인증서: Let’s Encrypt (Certbot)  
-  - CI/CD: GitHub Actions → EC2 배포 스크립트 (push → 빌드 → 서비스 재시작)  
+  - CI/CD: GitHub Actions  
   - 모니터링: Prometheus (메트릭 수집) → Grafana (대시보드 시각화)
 
 ---
@@ -157,8 +157,13 @@ Clubing을 통해 학생과 운영자 모두가 번거로운 연락 없이 실�
   - Vercel 배포 설정 및 환경 변수 관리  
 
 - **이한식** – Backend 리드  
-  - Spring Boot API 개발 및 AWS EC2 인프라 구성  
-  - MySQL, Redis 연동 및 JWT/CORS 설정
+  - Spring Boot REST API 설계·개발 및 AWS EC2 인프라 구성
+  - MySQL 연동 및 Redis 활용(캐싱, 분산락으로 Race Condition 방지, 인증 코드 TTL 저장소)
+  - JWT 기반 인증·인가 및 CORS 설정
+  - GitHub Actions CI/CD 파이프라인 구축
+  - Let’s Encrypt TLS 설정 & Certbot 자동 갱신
+  - Prometheus·Grafana 모니터링 연동
+  - JUnit 통합 테스트로 75% 커버리지 확보
   
 - **심현석** - Design 리드
   - Pigma 활용한 디자인
